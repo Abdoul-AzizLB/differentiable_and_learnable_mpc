@@ -8,6 +8,13 @@ differentiable optimization, machine learning, and reinforcement learning.
 
 ## 🔥 Updates
 
+- **Oct. 2026** — Repository initialized.
+- Initial bibliography contains approximately 180 papers on differentiable,
+  learnable, and reinforcement-learning-enhanced MPC.
+- Introduced a three-group taxonomy based on how learning interacts with
+  predictive control.
+- Application domains are treated as cross-cutting metadata rather than
+  mutually exclusive methodological categories.
 
 ## 📃 Introduction
 
@@ -78,25 +85,6 @@ literature required to understand and implement the methods above.
 
 ## 🔀 Classification Flow
 
-Does differentiation pass through an MPC/OCP?
-        ↓ YES
-Differentiable MPC
-
-Is an explicit policy learned by differentiating predictive rollouts?
-        ↓ YES
-Differentiable Predictive Control
-
-Is the predictive model itself learned/structured?
-        ↓ YES
-Learned Predictive Models
-
-Is learning mainly used to approximate/accelerate MPC?
-        ↓ YES
-Approximation & Acceleration
-
-Is the principal contribution safety/stability/robustness?
-        ↓ YES
-Safe & Certified Learning-Based MPC
 
 
 
