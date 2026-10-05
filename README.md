@@ -77,33 +77,26 @@ literature required to understand and implement the methods above.
 
 
 ## 🔀 Classification Flow
-flowchart TD
 
-A["Does the work involve MPC or predictive optimal control?"]
+Does differentiation pass through an MPC/OCP?
+        ↓ YES
+Differentiable MPC
 
-A -->|No| X["Outside primary survey scope"]
-A -->|Yes| B["Is learning embedded in or differentiated through
-the MPC / optimization structure?"]
+Is an explicit policy learned by differentiating predictive rollouts?
+        ↓ YES
+Differentiable Predictive Control
 
-B -->|Yes| G1["Group I:
-MPC-Structured Differentiable
-and Learning-Based Policies"]
+Is the predictive model itself learned/structured?
+        ↓ YES
+Learned Predictive Models
 
-B -->|No| C["Does learning tune, guide, augment,
-or evaluate an MPC controller?"]
+Is learning mainly used to approximate/accelerate MPC?
+        ↓ YES
+Approximation & Acceleration
 
-C -->|Yes| G2["Group II:
-RL- and Task-Informed MPC"]
-
-C -->|No| D["Is the work a foundational method,
-tool, tutorial, or survey directly supporting
-Differentiable / Learnable MPC?"]
-
-D -->|Yes| G3["Group III:
-Foundations, Tools,
-Surveys and Perspectives"]
-
-D -->|No| X
+Is the principal contribution safety/stability/robustness?
+        ↓ YES
+Safe & Certified Learning-Based MPC
 
 
 
