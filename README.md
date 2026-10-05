@@ -5,6 +5,12 @@ Model Predictive Control: A Survey** and provides a living catalog of
 research at the intersection of Model Predictive Control (MPC),
 differentiable optimization, machine learning, and reinforcement learning.
 
+
+## 🔥 Updates
+
+
+## 📃 Introduction
+
 Model Predictive Control provides a principled framework for optimal
 decision-making under dynamics and constraints, but its practical
 performance depends strongly on the predictive model, objective function,
@@ -23,11 +29,84 @@ This repository organizes this rapidly growing literature according to
 application domain.
 
 
-## 🔥 Updates
-## 📃 Introduction
 ## 🎯 Scope
+
+This survey considers methods in which learning interacts directly with
+Model Predictive Control, predictive optimal control, or the optimization
+machinery used to construct an MPC policy.
+
+Included topics comprise:
+
+- differentiable MPC and differentiable optimal control;
+- implicit differentiation and KKT-based MPC sensitivities;
+- differentiable predictive control;
+- learning MPC costs, weights, models, constraints, and terminal ingredients;
+- reinforcement learning with parameterized MPC policies;
+- MPC-guided and MPC-augmented reinforcement learning;
+- learning-based approximation and acceleration of MPC;
+- safe, robust, and certified learning-based MPC;
+- differentiable and learning-based optimization methods directly relevant
+  to predictive control.
+
+Application papers are included when learning is a substantive component
+of the MPC methodology rather than merely an unrelated module surrounding
+a conventional MPC controller.
+
 ## 🧭 Taxonomy
+
+We classify the literature according to the primary mechanism through which
+learning interacts with predictive control.
+
+### 1. MPC-Structured Differentiable and Learning-Based Policies
+
+Learning is embedded in the MPC or optimization structure itself. Gradients
+may propagate through the optimization problem, or a learned component may
+replace, approximate, or augment part of the predictive-control formulation.
+
+### 2. RL- and Task-Informed MPC: Hybrid Learning and Control
+
+MPC remains a recognizable optimization-based controller, while an outer
+learning mechanism tunes, guides, augments, or evaluates the MPC policy
+using closed-loop or task-level performance.
+
+### 3. Foundations, Tools, Surveys and Perspectives
+
+This group contains the mathematical foundations, learning algorithms,
+differentiable optimization techniques, software frameworks, and survey
+literature required to understand and implement the methods above.
+
+
 ## 🔀 Classification Flow
+flowchart TD
+
+A["Does the work involve MPC or predictive optimal control?"]
+
+A -->|No| X["Outside primary survey scope"]
+A -->|Yes| B["Is learning embedded in or differentiated through
+the MPC / optimization structure?"]
+
+B -->|Yes| G1["Group I:
+MPC-Structured Differentiable
+and Learning-Based Policies"]
+
+B -->|No| C["Does learning tune, guide, augment,
+or evaluate an MPC controller?"]
+
+C -->|Yes| G2["Group II:
+RL- and Task-Informed MPC"]
+
+C -->|No| D["Is the work a foundational method,
+tool, tutorial, or survey directly supporting
+Differentiable / Learnable MPC?"]
+
+D -->|Yes| G3["Group III:
+Foundations, Tools,
+Surveys and Perspectives"]
+
+D -->|No| X
+
+
+
 ## 📈 Publication Timeline
 ## 📊 Literature Distribution
 ## 🏷️ Application Domains
