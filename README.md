@@ -116,43 +116,26 @@ learning interacts with the MPC formulation. Additional characteristics,
 such as the learned MPC component, learning mechanism, and application
 domain, are treated as cross-cutting metadata.
 
+
 ```mermaid
 flowchart TD
 
-    %% ============================================================
-    %% NODES
-    %% ============================================================
-
     A["Candidate paper"]
-
     S["Explicit connection to MPC,<br/>predictive control, or<br/>optimization-based control?"]
-
     Q1["Primary contribution embeds learning<br/>in or differentiates through the<br/>MPC / OCP structure?"]
-
     Q2["Primary contribution uses learning<br/>to tune, guide, augment, or evaluate<br/>an MPC controller?"]
-
     Q3["Foundational algorithm,<br/>differentiable optimization method, software,<br/>survey, or perspective?"]
 
-    G1["GROUP I<br/><b>MPC-Structured Differentiable<br/>and Learning-Based Policies</b>"]
-
-    G2["GROUP II<br/><b>RL- and Task-Informed MPC</b><br/>Hybrid Learning and Control"]
-
-    G3["GROUP III<br/><b>Foundations, Tools,<br/>Surveys and Perspectives</b>"]
+    G1["GROUP I<br/>MPC-Structured Differentiable<br/>and Learning-Based Policies"]
+    G2["GROUP II<br/>RL- and Task-Informed MPC<br/>Hybrid Learning and Control"]
+    G3["GROUP III<br/>Foundations, Tools,<br/>Surveys and Perspectives"]
 
     OUT["Outside primary scope"]
 
     META["Add cross-cutting metadata"]
-
-    L["What is learned?<br/>Cost • Dynamics • Constraints<br/>Value • Solver • Policy"]
-
-    M["Learning mechanism<br/>RL • Implicit differentiation<br/>Imitation • Supervision • etc."]
-
-    APP["Application domain<br/>UAV • Automotive • HVAC<br/>Energy • Process • Robotics • etc."]
-
-
-    %% ============================================================
-    %% CLASSIFICATION FLOW
-    %% ============================================================
+    L["What is learned?<br/>Cost - Dynamics - Constraints<br/>Value - Solver - Policy"]
+    M["How is it learned?<br/>RL - Implicit differentiation<br/>Imitation - Supervision - etc."]
+    APP["Where is it applied?<br/>UAV - Automotive - HVAC<br/>Energy - Process - Robotics - etc."]
 
     A --> S
 
@@ -168,11 +151,6 @@ flowchart TD
     Q3 -->|Yes| G3
     Q3 -->|No| OUT
 
-
-    %% ============================================================
-    %% CROSS-CUTTING METADATA
-    %% ============================================================
-
     G1 --> META
     G2 --> META
     G3 --> META
@@ -181,70 +159,17 @@ flowchart TD
     META --> M
     META --> APP
 
+    classDef main fill:#dceefa,stroke:#c4d2dc,stroke-width:1px,color:#0759a5;
+    classDef decision fill:#f7fbfe,stroke:#b8d8ee,stroke-width:1px,stroke-dasharray:3 3,color:#0759a5;
+    classDef group fill:#dceefa,stroke:#c4d2dc,stroke-width:1px,color:#0759a5;
+    classDef metadata fill:#dceefa,stroke:#c4d2dc,stroke-width:1px,color:#0759a5;
 
-    %% ============================================================
-    %% NODE STYLES
-    %% ============================================================
+    class A,OUT main;
+    class S,Q1,Q2,Q3 decision;
+    class G1,G2,G3 group;
+    class META,L,M,APP metadata;
 
-    classDef mainNode
-        fill:#dceefa,
-        stroke:#c4d2dc,
-        stroke-width:1.2px,
-        color:#0759a5,
-        font-weight:600;
-
-    classDef decisionNode
-        fill:#f7fbfe,
-        stroke:#b8d8ee,
-        stroke-width:1.4px,
-        stroke-dasharray:3 3,
-        color:#0759a5,
-        font-weight:600;
-
-    classDef groupNode
-        fill:#dceefa,
-        stroke:#c4d2dc,
-        stroke-width:1.2px,
-        color:#0759a5,
-        font-weight:600;
-
-    classDef metadataNode
-        fill:#dceefa,
-        stroke:#c4d2dc,
-        stroke-width:1.2px,
-        color:#0759a5,
-        font-weight:600;
-
-    classDef outsideNode
-        fill:#dceefa,
-        stroke:#c4d2dc,
-        stroke-width:1.2px,
-        color:#0759a5,
-        font-weight:600;
-
-
-    %% ============================================================
-    %% APPLY STYLES
-    %% ============================================================
-
-    class A mainNode;
-
-    class S,Q1,Q2,Q3 decisionNode;
-
-    class G1,G2,G3 groupNode;
-
-    class META,L,M,APP metadataNode;
-
-    class OUT outsideNode;
-
-
-    %% ============================================================
-    %% CONNECTION STYLE
-    %% ============================================================
-
-    linkStyle default
-        stroke:#9a9a9a,
-        stroke-width:1.3px;
+    linkStyle default stroke:#999999,stroke-width:1px;
 ```
 
 Papers combining multiple paradigms are assigned according to their primary
