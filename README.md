@@ -172,9 +172,9 @@ flowchart TD
     linkStyle default stroke:#999999,stroke-width:1px;
 ```
 
-> **Classification policy:** Each paper is assigned to a single primary methodological category according to its main scientific contribution.
-> Because many works combine multiple learning and control paradigms, additional methodological characteristics are retained as secondary labels.
-> Application domain, learned MPC component, learning mechanism, system/platform, and safety properties are treated as cross-cutting metadata
+> **Classification policy:** Each paper is assigned to a single **primary methodological category** according to its main scientific contribution.
+> Because many works combine multiple learning and control paradigms, additional methodological characteristics are retained as **secondary methodological labels**.
+> Application domain, learned MPC component, learning mechanism, system/platform, and safety properties are treated as **cross-cutting metadata**
 > and do not determine the primary classification.
 
 
