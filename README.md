@@ -1,6 +1,6 @@
 # Differentiable and Learnable MPC: A Survey
 
-> A living survey of differentiable optimization, learning-based MPC,
+> A living survey and curated bibliography of differentiable, learnable,
 > and reinforcement-learning-enhanced predictive control.
 
 This repository accompanies the survey **Differentiable and Learnable
@@ -118,34 +118,26 @@ domain, are treated as cross-cutting metadata.
 
 ```mermaid
 flowchart TD
+    A["Candidate paper"] --> S{"Explicit connection to MPC,<br/>predictive control, or<br/>optimization-based control?"}
+    S -->|No| O["Outside primary scope"]
+    S -->|Yes| Q1{"Primary contribution embeds learning<br/>in or differentiates through the<br/>MPC / OCP structure?"}
 
-    A["Does the work involve MPC, predictive control,
-    or an optimization-based control policy?"]
+    Q1 -->|Yes| G1["GROUP I<br/><b>MPC-Structured Differentiable<br/>and Learning-Based Policies</b>"]
+    Q1 -->|No| Q2{"Primary contribution uses learning<br/>to tune, guide, augment, or evaluate<br/>an MPC controller?"}
 
-    B{"Is learning embedded in, or differentiated through,
-    the MPC / optimal-control structure?"}
+    Q2 -->|Yes| G2["GROUP II<br/><b>RL- and Task-Informed MPC</b><br/>Hybrid Learning and Control"]
+    Q2 -->|No| Q3{"Foundational algorithm, differentiable<br/>optimization method, software,<br/>survey, or perspective?"}
 
-    C{"Does an external learning mechanism tune, guide,
-    augment, or evaluate an MPC controller?"}
+    Q3 -->|Yes| G3["GROUP III<br/><b>Foundations, Tools,<br/>Surveys and Perspectives</b>"]
+    Q3 -->|No| O
 
-    D{"Is the work a foundational method, software tool,
-    survey, or perspective supporting learnable MPC?"}
+    G1 --> M["Add cross-cutting metadata"]
+    G2 --> M
+    G3 --> M
 
-    G1["Group I<br/>MPC-Structured Differentiable<br/>and Learning-Based Policies"]
-
-    G2["Group II<br/>RL- and Task-Informed MPC:<br/>Hybrid Learning and Control"]
-
-    G3["Group III<br/>Foundations, Tools,<br/>Surveys and Perspectives"]
-
-    OUT["Outside primary survey scope"]
-
-    A --> B
-    B -->|Yes| G1
-    B -->|No| C
-    C -->|Yes| G2
-    C -->|No| D
-    D -->|Yes| G3
-    D -->|No| OUT
+    M --> T1["What is learned?<br/>Cost • Dynamics • Constraints<br/>Value • Solver • Policy"]
+    M --> T2["Learning mechanism<br/>RL • Implicit differentiation<br/>Imitation • Supervision • etc."]
+    M --> T3["Application domain<br/>UAV • Automotive • HVAC<br/>Energy • Process • Robotics • etc."]
 ```
 
 Papers combining multiple paradigms are assigned according to their primary
