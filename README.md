@@ -1,4 +1,7 @@
-# Differentiable and Learnable MPC : A Survey
+# Differentiable and Learnable MPC: A Survey
+
+> A living survey of differentiable optimization, learning-based MPC,
+> and reinforcement-learning-enhanced predictive control.
 
 This repository accompanies the survey **Differentiable and Learnable
 Model Predictive Control: A Survey** and provides a living catalog of
