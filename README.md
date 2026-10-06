@@ -70,17 +70,39 @@ Learning is embedded in the MPC or optimization structure itself. Gradients
 may propagate through the optimization problem, or a learned component may
 replace, approximate, or augment part of the predictive-control formulation.
 
+The group comprises:
+
+1. **Differentiable MPC and Optimization-Based Policies**
+2. **Differentiable Predictive Control**
+3. **Structured and Learned Predictive Models for MPC**
+4. **Learning-Based Approximation and Acceleration of MPC**
+5. **Safe, Robust and Certified Learning-Based MPC**
+
 ### 2. RL- and Task-Informed MPC: Hybrid Learning and Control
 
 MPC remains a recognizable optimization-based controller, while an outer
 learning mechanism tunes, guides, augments, or evaluates the MPC policy
 using closed-loop or task-level performance.
 
+The group comprises:
+
+1. **RL for MPC Parameter and Cost Tuning**
+2. **RL-Guided and RL-Augmented MPC**
+3. **Value Learning, Policy Optimization and MPC-Based RL**
+4. **Imitation, Decision-Focused and Task-Oriented MPC Learning**
+
 ### 3. Foundations, Tools, Surveys and Perspectives
 
 This group contains the mathematical foundations, learning algorithms,
 differentiable optimization techniques, software frameworks, and survey
 literature required to understand and implement the methods above.
+
+The group comprises:
+
+1. **Foundations of Reinforcement Learning and Optimal Control**
+2. **Differentiable Optimization and Sensitivity Analysis**
+3. **Software and Computational Tools**
+4. **Surveys, Tutorials and Perspectives**
 
 
 ## 🔀 Classification Flow
