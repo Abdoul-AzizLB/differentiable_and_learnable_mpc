@@ -110,7 +110,47 @@ The group comprises:
 
 ## 🔀 Classification Flow
 
+To ensure a consistent classification of the literature, each candidate
+paper is first assigned to a primary methodological group according to how
+learning interacts with the MPC formulation. Additional characteristics,
+such as the learned MPC component, learning mechanism, and application
+domain, are treated as cross-cutting metadata.
 
+```mermaid
+flowchart TD
+
+    A["Does the work involve MPC, predictive control,
+    or an optimization-based control policy?"]
+
+    B{"Is learning embedded in, or differentiated through,
+    the MPC / optimal-control structure?"}
+
+    C{"Does an external learning mechanism tune, guide,
+    augment, or evaluate an MPC controller?"}
+
+    D{"Is the work a foundational method, software tool,
+    survey, or perspective supporting learnable MPC?"}
+
+    G1["Group I<br/>MPC-Structured Differentiable<br/>and Learning-Based Policies"]
+
+    G2["Group II<br/>RL- and Task-Informed MPC:<br/>Hybrid Learning and Control"]
+
+    G3["Group III<br/>Foundations, Tools,<br/>Surveys and Perspectives"]
+
+    OUT["Outside primary survey scope"]
+
+    A --> B
+    B -->|Yes| G1
+    B -->|No| C
+    C -->|Yes| G2
+    C -->|No| D
+    D -->|Yes| G3
+    D -->|No| OUT
+```
+
+Papers combining multiple paradigms are assigned according to their primary
+methodological contribution, while secondary characteristics are retained
+as metadata.
 
 
 ## 📈 Publication Timeline
